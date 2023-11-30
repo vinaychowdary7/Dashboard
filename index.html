@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Imported Styles -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav>
+      <div class="navbar">
+        <div class="cross-div">
+          <span onclick="closeNav()"><strong>❌</strong></span>
+        </div>
+        <div class="logo">
+          <img src="images/logo.png" alt="">
+        </div>
+        <ul>
+          <li><a href="#" class="active" onclick="showContent('Overview',this)">
+              <span class="nav-item">Overview</span>
+            </a>
+          </li>
+          <li><a href="#" onclick="showContent('Onboarding',this)">
+              <span class="nav-item">Onboarding</span>
+            </a>
+          </li>
+          <li><a href="#" onclick="showContent('Monitoring',this)">
+              <span class="nav-item">Monitoring</span>
+            </a>
+          </li>
+          <li><a href="#" onclick="showContent('Flagging',this)">
+              <span class="nav-item">Flagging</span>
+            </a>
+          </li>
+          <li><a href="#" onclick="showContent('Source-of-Income',this)">
+              <span class="nav-item">Source of Income</span>
+            </a>
+          </li>
+          <li><a href="#" onclick="showContent('UAR',this)">
+              <span class="nav-item">UAR</span>
+            </a>
+          </li>
+          <li><a href="#" class="profile">
+              <div class="name-img-a">
+                <div>
+                  <a href="" class="name-ic"><img src="images/Image.png" height="25px"></a>
+                </div>
+                <div>
+                  <span class="nav-item"><label class="user">Sam Altman</label><br><label
+                      class="email">samaltman123@gmail.com</label></span>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <!-- Main Section -->
+    <section class="main">
+      <button class="toggle-butt" onclick="showNav()">
+        <h1><strong>☰</strong></h1>
+      </button>
+      <div id="Monitoring" class="disp-content">
+        <div class="main-body">
+          <div id="head-butt">
+            <h1>Monitoring</h1>
+            <button id="closeAccountBtn" onclick="openModal()"><span class="material-symbols-outlined"
+                style="font-size: small; margin-right: 3px;">cancel</span> Cancel Account</button>
+          </div>
+
+          <div class="hrandstatus">
+            <div class="hrstyle">
+              <div class="statusstyle">
+                <!-- Text with Onclick EventListener Which Calls the Javascript Function changeTable from Pending to Completed and Completed to Pending  -->
+                <span style=" border-color:  rgb(107, 125, 207); color: rgb(107,125,207);" class="status"
+                  onclick="changeTable('table-pending',this)">Pending</span>
+                <span style=" border-color: rgb(228,228,228); color: rgb(228,228,228);" class="status"
+                  onclick="changeTable('table-completed',this)">Completed</span>
+              </div>
+              <hr class="hrtag">
+            </div>
+          </div>
+          <div class="search_bar">
+            <input type="search" class="search-input" placeholder=" &#x1F50D;Search job here...">
+            <select class="Category">
+              <option>Trigger Reason</option>
+              <option value="Hard">Hard Flag</option>
+              <option value="Temp">Temp Flag</option>
+              <option value="Restricted">Restricted Flag</option>
+              <option value="Un-flag">Un Flag</option>
+              <option value="Reviewed">Reviewed</option>
+            </select>
+            <select class="filter">
+              <option>Risk Level</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+            </select>
+          </div>
+
+          <!-- Pending Table -->
+          <div class="table" id="table-pending">
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Risk Level</th>
+                  <th>Trigger Reason</th>
+                  <th>In Queue For</th>
+                  <th>Date added on</th>
+                  <th>Previously Reviewed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="name-ico-tab">
+                      <div><label class="user">Sam Altman</label><br><label class="email">samaltman123@gmail.com</label>
+                      </div>
+                      <div><a href="" class="name-ic"><img src="images/external-link.png"></a></div>
+                    </div>
+                  </td>
+                  <td><label class="risklevel-medium"><span style=" font-size: 30px">&#8226;</span>Medium</label></td>
+                  <td><label class="trigger">IP Charge</label></td>
+                  <td><label class="in-queue">4 Days</label></td>
+                  <td>12 Oct,2023</td>
+                  <td><label class="previously">Yes</label><br><label class="previously-date">23 Aug,2023</label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="name-ico-tab">
+                      <div><label class="user">Sameer Choubey</label><br><label
+                          class="email">sameerchoubey123@gmail.com</label></div>
+                      <div><a href="" class="name-ic"><img src="images/external-link.png"></a></div>
+                    </div>
+                  </td>
+                  <td><label class="risklevel-high"><span style=" font-size: 30px">&#8226;</span>High</label></td>
+                  <td><label class="trigger">FIFO</label></td>
+                  <td><label class="in-queue">4 Days</label></td>
+                  <td>12 Oct,2023</td>
+                  <td><label class="previously">No</label><br><label class="previously-date"></label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="name-ico-tab">
+                      <div><label class="user">Adarsh Panikkar</label><br><label class="email">adarsh@onjuno.com</label>
+                      </div>
+                      <div><a href="" class="name-ic"><img src="images/external-link.png"></a></div>
+                    </div>
+                  </td>
+                  <td><label class="risklevel-low"><span style=" font-size: 30px">&#8226;</span>Low</label></td>
+                  <td><label class="trigger">IP Charge</label></td>
+                  <td><label class="in-queue">5 Days</label></td>
+                  <td>12 Oct,2023</td>
+                  <td><label class="previously">No</label><br><label class="previously-date"></label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="name-ico-tab">
+                      <div><label class="user">Pratik Shetty</label><br><label class="email">pratik3@gmail.com</label>
+                      </div>
+                      <div><a href="" class="name-ic"><img src="images/external-link.png"></a></div>
+                    </div>
+                  </td>
+                  <td><label class="risklevel-high"><span style=" font-size: 30px">&#8226;</span>High</label></td>
+                  <td><label class="trigger">IP Charge</label></td>
+                  <td><label class="in-queue">5 Days</label></td>
+                  <td>12 Oct,2023</td>
+                  <td><label class="previously">Yes</label><br><label class="previously-date">12 Sep,2023</label></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Completed Table -->
+          <div class="table" id="table-completed">
+            <table>
+              <thead>
+                <tr>
+                  <th>User</th>
+                  <th>Risk Level</th>
+                  <th>Action Reason</th>
+                  <th>Time to close</th>
+                  <th>Date added on</th>
+                  <th>Action taken by</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="name-ico-tab">
+                      <div><label class="user">Sam Altman</label><br><label class="email">samaltman123@gmail.com</label>
+                      </div>
+                      <div><a href="" class="name-ic"><img src="images/external-link.png"></a></div>
+                    </div>
+                  </td>
+                  <td><label class="risklevel-medium"><span style=" font-size: 30px">&#8226;</span>Medium</label></td>
+                  <td><label class="action">Flagged</label></td>
+                  <td><label class="time-to-close">14 Days</label></td>
+                  <td>12 Oct,2023</td>
+                  <td><label class="action-taken-by">Neil </label><br><label
+                      class="action-taken-email">neil@onjuno.com</label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="name-ico-tab">
+                      <div><label class="user">Sameer Choubey</label><br><label
+                          class="email">sameerchoubey123@gmail.com</label></div>
+                      <div><a href="" class="name-ic"><img src="images/external-link.png"></a></div>
+                    </div>
+                  </td>
+                  <td><label class="risklevel-high"><span style=" font-size: 30px">&#8226;</span>High</label></td>
+                  <td><label class="action">Closed</label></td>
+                  <td><label class="time-to-close">14 Days</label></td>
+                  <td>12 Oct,2023</td>
+                  <td><label class="action-taken-by">Pratik</label><br><label
+                      class="action-taken-email">pratik@onjuno.com</label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="name-ico-tab">
+                      <div><label class="user">Adarsh Panikkar</label><br><label class="email">adarsh@onjuno.com</label>
+                      </div>
+                      <div><a href="" class="name-ic"><img src="images/external-link.png"></a></div>
+                    </div>
+                  </td>
+                  <td><label class="risklevel-low"><span style=" font-size: 30px">&#8226;</span>Low</label></td>
+                  <td><label class="action">Closed</label></td>
+                  <td><label class="time-to-close">15 Days</label></td>
+                  <td>12 Oct,2023</td>
+                  <td><label class="action-taken-by">Prashanth</label><br><label
+                      class="action-taken-email">prashanth@onjuno.com</label></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="name-ico-tab">
+                      <div><label class="user">Pratik Shetty</label><br><label class="email">pratik3@gmail.com</label>
+                      </div>
+                      <div><a href="" class="name-ic"><img src="images/external-link.png"></a></div>
+                    </div>
+                  </td>
+                  <td><label class="risklevel-high"><span style=" font-size: 30px">&#8226;</span>High</label></td>
+                  <td><label class="action">SOI requested</label></td>
+                  <td><label class="time-to-close">15 Days</label></td>
+                  <td>12 Oct,2023</td>
+                  <td><label class="action-taken-by">Rasleen Kaur </label><br><label
+                      class="action-taken-email">rasleen@onjuno.com</label></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Close Account Form -->
+          <div id="closeAccountModal" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal()">&times;</span>
+              <h2>Close Account</h2>
+              <form id="closeAccountForm">
+                <div>
+                  <label for="emailOption">Email:</label><br>
+                  <input type="mail" id="emailOption" name="emailOption" required>
+                </div>
+
+                <div>
+                  <label for="uarOption">Want to File UAR:</label>
+                  <input type="radio" id="chargeYes" name="chargeFee" value="yes" required>
+                  <label for="chargeYes">Yes</label>
+                  <input type="radio" id="chargeNo" name="chargeFee" value="no" required>
+                  <label for="chargeNo">No</label>
+                </div>
+
+                <div>
+                  <label>Reason:</label><br>
+                  <select type="text" id="reason" name="reason" required>
+                    <option>Reason</option>
+                    <option>Reason1</option>
+                    <option>Reason2</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="note">Note:</label><br>
+                  <textarea id="note" name="note" rows="4" cols="5" required></textarea>
+                </div>
+                <div id="but-rad">
+                  <div i>
+                    <input type="checkbox" id="chargeYes" name="chargeFee" value="Charge fees" required>
+                    <label>Charge Closure Fee</label>
+                  </div>
+                  <button type="button" id="form-but" onclick="submitCloseAccount()" disabled>Close Account</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="Overview" class="disp-content">
+        <div class="main-body">
+          <h1>Overview</h1>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
