@@ -100,4 +100,3 @@ document.querySelector('#closeAccountForm').addEventListener('input', function (
   var formIsValid = document.querySelector('#closeAccountForm').checkValidity();
   document.querySelector('#form-but').disabled = !formIsValid;
 });
-// code is completed.
